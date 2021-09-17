@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.CloudWatch" Version="3.7.2.23" />
+    <PackageReference Include="AWSSDK.CloudWatchLogs" Version="3.7.1.42" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AWS\" />
+  </ItemGroup>
+
+</Project>

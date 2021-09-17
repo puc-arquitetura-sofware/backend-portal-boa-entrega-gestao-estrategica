@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Api", "src\GSL.Cadastro\GSL.GestaoEstrategica.Api.csproj", "{51FB92F2-0471-4F44-A001-6981877C9D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Api", "src\GSL.GestaoEstrategica\GSL.GestaoEstrategica.Api.csproj", "{51FB92F2-0471-4F44-A001-6981877C9D31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Api", "1 - Api", "{929D2E80-D130-4A60-9F42-182DF243D863}"
 EndProject
@@ -13,21 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Dominio", "3 - Dominio"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestrutura", "4 - Infraestrutura", "{9E0E793D-21C4-4B5E-937A-03DDC76DB583}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Aplicacao", "src\GSL.Cadastro.Aplicacao\GSL.GestaoEstrategica.Aplicacao.csproj", "{957ABDEE-52D2-4025-A25B-67BB167C2108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Aplicacao", "src\GSL.GestaoEstrategica.Aplicacao\GSL.GestaoEstrategica.Aplicacao.csproj", "{957ABDEE-52D2-4025-A25B-67BB167C2108}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Dominio", "src\GSL.Cadastro.Dominio\GSL.GestaoEstrategica.Dominio.csproj", "{F6D6D911-387D-4159-98FD-399169D8CBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Dominio", "src\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj", "{F6D6D911-387D-4159-98FD-399169D8CBD5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{E372A27E-A1A7-48B0-BFE3-74916BC0ADDD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{194BDF71-C043-4DB8-AAAC-59A257666C22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Data", "src\GSL.Cadastro.Data\GSL.GestaoEstrategica.Data.csproj", "{27A471F0-E8A3-4317-BB70-CF2DB9DE52A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.Data", "src\GSL.GestaoEstrategica.Data\GSL.GestaoEstrategica.Data.csproj", "{27A471F0-E8A3-4317-BB70-CF2DB9DE52A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.SharedKernel", "src\GSL.Cadastro.SharedKernel\GSL.GestaoEstrategica.SharedKernel.csproj", "{B5AB857C-443D-414B-A624-2109388BE9C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSL.GestaoEstrategica.SharedKernel", "src\GSL.GestaoEstrategica.SharedKernel\GSL.GestaoEstrategica.SharedKernel.csproj", "{B5AB857C-443D-414B-A624-2109388BE9C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C2F81CD7-AC18-45BE-A9BE-1DF2501E0BFB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C3C0F6DB-58D8-4F24-9910-F5DE99C87032}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - Integration", "4.3 - Integration", "{E691FE6B-E861-49B7-A289-3284E3C7169D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSL.GestaoEstrategica.Integration", "GSL.GestaoEstrategica.Integration2\GSL.GestaoEstrategica.Integration.csproj", "{392E322D-1036-445D-BDC2-4ECC77B270F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{B5AB857C-443D-414B-A624-2109388BE9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5AB857C-443D-414B-A624-2109388BE9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5AB857C-443D-414B-A624-2109388BE9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{392E322D-1036-445D-BDC2-4ECC77B270F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392E322D-1036-445D-BDC2-4ECC77B270F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392E322D-1036-445D-BDC2-4ECC77B270F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392E322D-1036-445D-BDC2-4ECC77B270F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,8 @@ Global
 		{194BDF71-C043-4DB8-AAAC-59A257666C22} = {9E0E793D-21C4-4B5E-937A-03DDC76DB583}
 		{27A471F0-E8A3-4317-BB70-CF2DB9DE52A5} = {E372A27E-A1A7-48B0-BFE3-74916BC0ADDD}
 		{B5AB857C-443D-414B-A624-2109388BE9C1} = {194BDF71-C043-4DB8-AAAC-59A257666C22}
+		{E691FE6B-E861-49B7-A289-3284E3C7169D} = {9E0E793D-21C4-4B5E-937A-03DDC76DB583}
+		{392E322D-1036-445D-BDC2-4ECC77B270F9} = {E691FE6B-E861-49B7-A289-3284E3C7169D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4AD41D25-B892-4F83-A794-74350D7AB015}

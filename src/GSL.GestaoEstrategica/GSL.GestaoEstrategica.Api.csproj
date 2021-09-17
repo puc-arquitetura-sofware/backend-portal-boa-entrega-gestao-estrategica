@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>57d60be3-606f-4d5f-9b80-c252c94542a9</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.CloudWatch" Version="3.7.2.23" />
+    <PackageReference Include="AWSSDK.CloudWatchLogs" Version="3.7.1.42" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
+    <PackageReference Include="Mapster" Version="7.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GSL.GestaoEstrategica.Integration2\GSL.GestaoEstrategica.Integration.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Aplicacao\GSL.GestaoEstrategica.Aplicacao.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Data\GSL.GestaoEstrategica.Data.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Data\GSL.GestaoEstrategica.Data.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.SharedKernel\GSL.GestaoEstrategica.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
