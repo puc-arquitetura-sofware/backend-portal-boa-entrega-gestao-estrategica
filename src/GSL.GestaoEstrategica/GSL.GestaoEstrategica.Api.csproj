@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GSL.GestaoEstrategica.Integration2\GSL.GestaoEstrategica.Integration.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Integration\GSL.GestaoEstrategica.Integration.csproj" />
     <ProjectReference Include="..\GSL.GestaoEstrategica.Aplicacao\GSL.GestaoEstrategica.Aplicacao.csproj" />
     <ProjectReference Include="..\GSL.GestaoEstrategica.Data\GSL.GestaoEstrategica.Data.csproj" />
     <ProjectReference Include="..\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj" />

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj" />
+    <ProjectReference Include="..\GSL.GestaoEstrategica.Dominio\GSL.GestaoEstrategica.Dominio.csproj" />
   </ItemGroup>
 
 </Project>
