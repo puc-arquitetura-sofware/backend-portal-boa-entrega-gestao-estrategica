@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C3C0F6DB-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - Integration", "4.3 - Integration", "{E691FE6B-E861-49B7-A289-3284E3C7169D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSL.GestaoEstrategica.Integration", "GSL.GestaoEstrategica.Integration2\GSL.GestaoEstrategica.Integration.csproj", "{392E322D-1036-445D-BDC2-4ECC77B270F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSL.GestaoEstrategica.Integration", "GSL.GestaoEstrategica.Integration\GSL.GestaoEstrategica.Integration.csproj", "{392E322D-1036-445D-BDC2-4ECC77B270F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
