@@ -3,11 +3,9 @@ using GSL.GestaoEstrategica.Dominio.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
-using System.Threading;
 using Amazon.CloudWatch.Model;
-using System.Collections.Generic;
-using System;
-using Amazon.CloudWatch;
+using GSL.GestaoEstrategica.Aplicacao.Fakes;
+using GSL.GestaoEstrategica.Aplicacao.Entrega;
 
 namespace GSL.GestaoEstrategica.Api.Controllers
 {
@@ -27,32 +25,27 @@ namespace GSL.GestaoEstrategica.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
-        public async Task<IActionResult> Salvar([FromBody] EntregaViewModel EntregaViewModel)
+        public async Task<IActionResult> Salvar([FromBody] EntregaViewModel entrega)
         {
-            var dimensao = new Dimension 
-            { 
-                Name = "Metricas de Entrega",
-                Value = EntregaViewModel.Status == Dominio.Enums.StatusEntrega.Pendente ? "Entregas a Realizar" : "Entregas Realizadas"
-            };
-
-            var metrica = new MetricDatum
-            {
-                Dimensions = new List<Dimension>(),
-                MetricName = "Quantidade",
-                StatisticValues = new StatisticSet(),
-                TimestampUtc = Convert.ToDateTime(EntregaViewModel.Datahora),
-                Unit = StandardUnit.Count,
-                Value = 1
-            };
-
-            var requisicao = new PutMetricDataRequest
-            {
-                MetricData = new List<MetricDatum>() { metrica },
-                Namespace = "Gestao Estrategica"
-            };
-
-            var resposta = await _cloudWatch.RegistrarMetrica(requisicao, new CancellationToken());
+            var gestaoEntrega = new GestaoEntregas(_cloudWatch);
+            var resposta = await gestaoEntrega.IncluirEntrega(entrega);
             return CustomResponse(resposta);
+        }
+
+        [HttpPost("carregar-dados")]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> CarregarDados()
+        {
+            var gestaoEntrega = new GestaoEntregas(_cloudWatch);
+            var listaEntregas = EntregaFake.GerarFake(20);
+
+            foreach (var entrega in listaEntregas)
+                await gestaoEntrega.IncluirEntrega(entrega);
+
+            return CustomResponse("registros carregados com sucesso");
         }
     }
 }
