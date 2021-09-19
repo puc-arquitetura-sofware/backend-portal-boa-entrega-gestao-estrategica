@@ -37,10 +37,10 @@ namespace GSL.GestaoEstrategica.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> CarregarDados()
+        public async Task<IActionResult> CarregarDados([FromBody] DadosFakeViewModel dados)
         {
             var gestaoEntrega = new GestaoEntregas(_cloudWatch);
-            var listaEntregas = EntregaFake.GerarFake(20);
+            var listaEntregas = EntregaFake.GerarFake(dados);
 
             foreach (var entrega in listaEntregas)
                 await gestaoEntrega.IncluirEntrega(entrega);

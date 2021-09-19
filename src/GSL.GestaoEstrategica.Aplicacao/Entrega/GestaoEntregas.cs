@@ -22,39 +22,34 @@ namespace GSL.GestaoEstrategica.Aplicacao.Entrega
 
         public async Task<PutMetricDataResponse> IncluirEntrega(EntregaViewModel entrega)
         {
-            try
+            ValidarData(entrega);
+
+            var dimensao = new Dimension
             {
-                ValidarData(entrega);
+                Name = "Metricas de Entrega",
+                Value = entrega.Status == Dominio.Enums.StatusEntrega.Pendente
+                    ? "Entregas a Realizar"
+                    : "Entregas Realizadas"
+            };
 
-                var dimensao = new Dimension
+            var requisicao = new PutMetricDataRequest
+            {
+                MetricData = new List<MetricDatum>()
                 {
-                    Name = "Metricas de Entrega",
-                    Value = entrega.Status == Dominio.Enums.StatusEntrega.Pendente ? "Entregas a Realizar" : "Entregas Realizadas"
-                };
-
-                var requisicao = new PutMetricDataRequest
-                {
-                    MetricData = new List<MetricDatum>() 
+                    new MetricDatum
                     {
-                        new MetricDatum
-                        {
-                            Dimensions = new List<Dimension>() { dimensao },
-                            MetricName = "Quantidade",
-                            StatisticValues = new StatisticSet(),
-                            TimestampUtc = Convert.ToDateTime(entrega.Datahora),
-                            Unit = StandardUnit.Count,
-                            Value = 1
-                        }
-                    },
-                    Namespace = "Gestao Estrategica"
-                };
+                        Dimensions = new List<Dimension>() {dimensao},
+                        MetricName = "Quantidade",
+                        StatisticValues = new StatisticSet(),
+                        TimestampUtc = Convert.ToDateTime(entrega.Datahora),
+                        Unit = StandardUnit.Count,
+                        Value = 1
+                    }
+                },
+                Namespace = "Gestao Estrategica"
+            };
 
-                return await _cloudWatch.RegistrarMetrica(requisicao, new CancellationToken());
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Falha ao registrar métrica: {ex.Message}");
-            }
+            return await _cloudWatch.RegistrarMetrica(requisicao, new CancellationToken());
         }
 
         private static void ValidarData(EntregaViewModel entrega)

@@ -11,7 +11,7 @@ namespace GSL.GestaoEstrategica.Aplicacao.Fakes
 {
     public static class EntregaFake
     {
-        public static List<EntregaViewModel> GerarFake(int quantidade)
+        public static List<EntregaViewModel> GerarFake(DadosFakeViewModel dados)
         {
             var faker = new Faker<EntregaViewModel>();
             var listaStatus = new List<StatusEntrega> { StatusEntrega.Entregue, StatusEntrega.Pendente };
@@ -20,7 +20,7 @@ namespace GSL.GestaoEstrategica.Aplicacao.Fakes
                 .RuleFor(x => x.Datahora, r => r.Date.Between(DateTime.Now.AddDays(-13), DateTime.Now).ToString("dd/MM/yyyy HH:MM"))
                 .RuleFor(x => x.Status, r => r.PickRandom(listaStatus));
 
-            return faker.Generate(quantidade).ToList();
+            return faker.Generate(dados.Quantidade).ToList();
         }
     }
 }
